@@ -1,0 +1,1671 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║           WORLDBOX – WIKI COMPLETA E LÓGICA TOTAL DO JOGO                   ║
+║           Versão 0.51.2 (ArmyBox) | Atualizado: Maio 2026                   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+ÍNDICE
+══════
+1.  Visão Geral e Filosofia
+2.  Interface e Abas de Poderes
+3.  Mapa, Terreno e Tiles
+4.  Biomas – Lista Completa e Mecânicas
+5.  Leis do Mundo (World Laws)
+6.  Idades (Ages)
+7.  Unidades – Stats, Fome, Felicidade
+8.  Genética, Genes e Subespécies
+9.  Traits de Criatura – Lista Completa (116)
+10. Traits de Subespécie (204)
+11. Fenótipos (Phenotypes)
+12. Reprodução e Ciclo de Vida
+13. Comportamento – Tasks (117) e Neurons (IA)
+14. Status Effects e Doenças
+15. Combate, Magias e Projéteis
+16. Metamorfose
+17. Monólito e Evolução
+18. Civilizações – Vilas, Reinos, Política
+19. Construção de Cidades e Edifícios
+20. Economia, Recursos e Comércio
+21. Barcos e Docas
+22. Clãs, Famílias e Genealogia
+23. Culturas, Idiomas e Religiões
+24. Livros, Bibliotecas e Plots
+25. Exércitos e Guerra
+26. Alianças
+27. Equipamentos e Itens
+28. Poderes do Jogador – 374 Poderes em 8 Abas
+29. Catálogo de Criaturas (118) – Completo
+30. Catálogo de Criaturas Evoluídas
+31. Criaturas Especiais / Other Creatures
+32. Criaturas Removidas e Não Utilizadas
+33. Knowledge – 774 Desbloqueáveis
+34. Conquistas (Achievements)
+35. História do Mundo (World History)
+36. Debug Menu
+37. Hotkeys
+38. Modding e Steam Workshop
+39. Conteúdo Oculto
+40. Sistema de Nomes – Lógica Completa
+41. Sistema de Fenótipos – 52 Cores
+42. Resumo dos 8 Pilares da Simulação
+
+═══════════════════════════════════════════════════════════════════════════════
+1. VISÃO GERAL E FILOSOFIA
+═══════════════════════════════════════════════════════════════════════════════
+
+WorldBox é um sandbox god-simulator desenvolvido por Maxim Karpenko (Mako Mako).
+Começou em 2012 como experimento browser/Flash e evoluiu para uma simulação
+profunda com milhares de unidades simultâneas no motor Unity.
+
+Versão atual: 0.51.2 (ArmyBox) – lançada em Setembro 2025, hotfixes até Abril 2026.
+Plataformas: Steam (PC), macOS, Linux, Android, iOS.
+Avaliação Steam: "Overwhelmingly Positive".
+
+O núcleo do jogo é um CICLO DE OBSERVAÇÃO E INTERVENÇÃO:
+ 1) O jogador cria o terreno e define as leis do mundo.
+ 2) Coloca criaturas (civilizadas e animais).
+ 3) Observa populações evoluírem em vilas, reinos, culturas e guerras.
+ 4) Pode intervir a qualquer momento com ~374 poderes divinos.
+
+Cada camada de simulação interage com as outras, gerando comportamentos
+emergentes imprevisíveis – o "efeito borboleta" citado pelos jogadores.
+
+═══════════════════════════════════════════════════════════════════════════════
+2. INTERFACE E ABAS DE PODERES
+═══════════════════════════════════════════════════════════════════════════════
+
+O jogo tem ~374 poderes organizados em 8 abas:
+
+ Aba 1: MAIN (15 poderes)
+   – Aparece ao abrir o jogo ou ao desselecionar as outras abas.
+   – Contém: Pause/Resume, Hourglass (velocidade), Statistics, Eye of Insight,
+     World Laws, Ages, World History, Knowledge, Achievements, Settings.
+
+ Aba 2: UNIT (poderes de unidade individual)
+   – Possession, Favorite, Follow, Trait Editor, Equipment Editor,
+     Mind View, Genealogy, Gene Editor.
+
+ Aba 3: WORLD SHAPING (47 poderes)
+   – Ferramentas de edição de terreno: Deep Ocean, Close Ocean, Shallow Waters,
+     Sand, Plain Soil, Forest Soil, Hills, Mountains, Summit.
+   – Muros: Stone Wall, Wall of Evil, Ancient Wall, Wood Wall, Green Wall,
+     Iron Wall, Wall of Light.
+   – Ferramentas: Shovel Up/Down, Finger, Vortex, Sponge, Sickle, Bucket,
+     Pickaxe, Spade, Axe, Demolish, Life Eraser, Scissors, Paint, Border Brush.
+
+ Aba 4: NOOSPHERE AND LIFE / CIVILIZATIONS (61 poderes)
+   – Village Info, Kingdom Info, Relations, Spite, Friendship, Inspiration,
+     Whisper of War, Discord, Wars List, War Lines, Plans and Plots,
+     Cultures List, Culture Layer, Alliances, Army Targets, Map Names,
+     Important Events, Tooltip Zones, Tooltip Units.
+   – Trait/Item Rains: Gamma Rain (Edit/Drop), Omega Rain (Edit/Drop),
+     Delta Rain (Edit/Drop), Loot Rain (Edit/Drop).
+   – Clone Rain, Divine Light, Blood Rain, Madness, Blessing, Coffee,
+     Powerup, Smooth Jazz, Dispel, Sleep.
+   – Memory Wipe Dusts: Black Dust (apaga tudo), White Dust (língua),
+     Red Dust (família/clã), Gold Dust (reino), Blue Dust (cultura),
+     Purple Dust (religião).
+
+ Aba 5: ANIMALS, CREATURES AND MONSTERS (117 poderes – spawn de criaturas)
+   – Todas as 118 criaturas do jogo. Ver seção 29–31.
+
+ Aba 6: NATURE AND DISASTERS
+   – Sementes de bioma: Grass, Savanna, Mushroom, Enchanted, Corrupted,
+     Swamp, Infernal, Jungle, Candy, Arcane Desert, Crystal, Lemon, Permafrost,
+     Birch, Maple, Celestial, Flower, Clover, Garlic, Paradox, Rocklands,
+     Singularity, Wasteland.
+   – Fertilizantes: Living Plants, Living Houses.
+   – Recursos: Fruit Bush, Stone, Ore Deposit, Silver, Mythril, Adamantine,
+     Gold, Herb.
+   – Erupções: Geyser, Acid Geyser, Volcano.
+   – Nuvens: Rain Cloud, Thunder Cloud, Hell Cloud, Acid Cloud, Lava Cloud,
+     Ash Cloud, Magic Cloud, Snow Cloud, Rage Cloud.
+   – Outros: Lightning, Tornado, Earthquake, Meteor Shower.
+
+ Aba 7: DESTRUCTION AND CHAOS (16 poderes)
+   – TNT, Delayed TNT, Water Bomb, Landmine, Fuse, Fireworks, Grenade, Bomb,
+     Napalm Bomb, Atomic Bomb, Antimatter Bomb, Tsar Bomba, Bowling Ball,
+     Heat-Ray, Meteorite, Infinity Coin.
+   – Criaturas destrutivas: Robot Santa, Grey Goo, Crab Bomb, Crabzilla,
+     Conway's Game of Life.
+
+ Aba 8: OTHER VARIOUS POWERS (31 poderes)
+   – About WorldBox, Tutorial Bear, News, Divine Magnet, Divine Light,
+     Monolith, Golden Brain, Corrupted Brain, Blood Rain, Gamma/Omega/Delta Rain,
+     Loot Rain, Clone Rain, Blessing, Madness, The Plague, Zombie Infection,
+     Gray Goo, Tumor, Crabzilla, Printer (Hexagon), Debug Menu.
+
+MENUS DE INSPEÇÃO:
+ Cada entidade com menu próprio (criatura, vila, reino, clã, cultura, etc.)
+ pode ser inspecionada ao clicar. O menu mostra stats, genealogia, inventário,
+ plots ativos e histórico.
+
+═══════════════════════════════════════════════════════════════════════════════
+3. MAPA, TERRENO E TILES
+═══════════════════════════════════════════════════════════════════════════════
+
+O mundo é uma GRELHA DE TILES (mapa 2D).
+ – Cada tile tem um tipo: water (deep ocean, close ocean, shallow), terra
+   (sand, soil, grass, snow, etc.), montanha, rocha, árvor, arbusto.
+ – O mundo é dividido em CHUNKS de 16×16 tiles para processamento eficiente.
+ – O jogo renderiza apenas chunks visíveis (otimização de performance).
+ – Tamanhos de mundo disponíveis: 2×2 até 9×9 (em tiles macro).
+ – Arquivos de save: map.wbox, map.wbax, map.json, map.meta.
+ – Autosaves: até 30 globais (máx. 5 por mundo). Mais autosaves desbloqueados
+   gratuitamente na atualização Monolith (0.51).
+ – O jogador pode exportar/importar mapas via Steam Workshop ou arquivos locais.
+ – [iOS/0.51.2] Pasta WorldBox acessível pelo app Files local e iTunes.
+
+CONDIÇÃO PARA FUNDAR CIDADE:
+ – Zona 8×8 completamente em terreno (sem montanhas/colinas).
+ – Ilha com pelo menos 300 tiles conectados de terra (sem montanhas).
+ – Criatura humanóide dentro da zona.
+ – Zona não pode ser reclamada por outra cidade.
+
+═══════════════════════════════════════════════════════════════════════════════
+4. BIOMAS – LISTA COMPLETA E MECÂNICAS
+═══════════════════════════════════════════════════════════════════════════════
+
+Total: 23 biomas normais + 6 especiais = 29 biomas.
+
+LÓGICA DE ESPALHAMENTO:
+ – Cada bioma tem FORÇA DE CRESCIMENTO (5 ou 6), CHANCE DE GERAÇÃO,
+   TAMANHO MÁXIMO e REGRAS DE ESPALHAMENTO.
+ – A cada 0,01–0,02 meses o jogo atualiza a vizinhança de cada tile e converte
+   tiles adjacentes conforme a força e regras do bioma.
+ – A velocidade de expansão varia com a Idade do mundo.
+ – Biomas com força 6 expandem mais rápido que os de força 5.
+
+─────────────────────────────────────────
+BIOMAS DE FORÇA 6 (se expandem mais rápido):
+─────────────────────────────────────────
+ · ARCANE DESERT  – Areia dourada mágica. Tiles de areia suave.
+ · CANDY          – "O bioma mais maligno". Doce e brilhante.
+ · CORRUPTED      – Cresce ainda mais rápido na Age of Dark and Despair.
+                    Aplica o efeito Cursed em criaturas próximas.
+                    Transforma mortos em esqueletos.
+                    Pode gerar fantasmas.
+                    Única fonte natural de osso em bioma.
+                    Extremely dangerous para civilizações.
+ · CRYSTAL        – Cheio de minerais cristalinos.
+ · ENCHANTED      – Brilhante e mágico.
+ · INFERNAL       – Queima tudo ao redor.
+ · JUNGLE         – Colorido e tropical.
+ · LEMON          – Ácido, "aceitável".
+ · MUSHROOM       – Cheio de cogumelos.
+ · PERMAFROST     – Frio congelante.
+ · SAVANNA        – Quente e seco.
+ · SWAMP          – Pantanoso e pegajoso.
+ · WASTELAND      – Dissolve qualquer terreno adjacente.
+
+─────────────────────────────────────────
+BIOMAS DE FORÇA 5:
+─────────────────────────────────────────
+ · BIRCH          – Floresta de bétulas.
+ · CELESTIAL      – Celestial e brilhante.
+ · CLOVER         – Trevos da sorte.
+ · FLOWER         – Florido e colorido.
+ · GARLIC         – Campo de alho.
+ · GRASS          – Bioma base. Verde e pacífico.
+ · MAPLE          – Floresta de bordo.
+ · PARADOX        – Paradoxal (regras invertidas).
+ · ROCKLANDS      – Terreno rochoso.
+ · SINGULARITY    – Singularidade (comportamento único).
+
+─────────────────────────────────────────
+BIOMAS ESPECIAIS (Spawners / Creep Biomes):
+─────────────────────────────────────────
+ · TUMOR          – Entidade estacionária que converte tiles ao redor em tumor
+                    e gera Tumor Monsters periodicamente.
+ · BIOMASS        – "Creep biome": espalha tiles e gera Bioblobs.
+ · PUMPKIN        – Gera Lil' Pumpkins e Super Pumpkins.
+ · CYBER          – Cybercore: gera unidades robóticas (Assimilators).
+ · SAND           – Areia básica (bioma neutro).
+ · HILL           – Colinas baixas com pedras.
+
+EFEITOS DOS BIOMAS NAS CRIATURAS:
+ – Alteram fauna e flora local.
+ – Mudam a paleta de cores (fenótipos) das criaturas que nascem ali.
+ – Concedem bônus ou debuffs específicos por bioma.
+ – Controlam quais criaturas podem nascer naturalmente nesse bioma.
+ – Afetam geração de loot e recursos.
+
+═══════════════════════════════════════════════════════════════════════════════
+5. LEIS DO MUNDO (WORLD LAWS)
+═══════════════════════════════════════════════════════════════════════════════
+
+World Laws são botões que alteram as REGRAS FÍSICAS E SOCIAIS fundamentais
+da simulação. São ativados/desativados pelo jogador a qualquer momento.
+
+LEI                  | EFEITO
+─────────────────────|────────────────────────────────────────────────────────
+100 People           | Limita a população por assentamento a 100 unidades.
+Gaia's Covenant      | Fogo, grey goo, heat rays, antimatter bombs, granadas,
+                     | meteoritos, bowling balls e Conway's NÃO destroem
+                     | terreno/biomas.
+Diplomacy            | Ativa/desativa guerras, alianças, paz e rebeliões.
+Magic Rites          | Permite rituais ligados à religião do clã (eventos
+                     | sobrenaturais: chuvas de sangue, pragas, milagres).
+Mutant Box           | Ao nascer, criaturas recebem de 1 a 4 traits aleatórios.
+                     | (Traits que não podem aparecer: Grin Mark, Antimatter
+                     | Essence, Geophagy, Unmoving, GMO, Uplifted, fenótipos.)
+Animal Spawn         | Ativa/desativa o aparecimento natural de animais.
+Natural Disasters    | Ativa/desativa chuvas, tornados, terramotos, meteoritos.
+Other Disasters      | Ativa/desativa loucura em massa, spawn de demônios,
+                     | magos e necromancers.
+Old Age              | Ativa/desativa morte por velhice.
+Eternal Lava         | Lava não solidifica ao contato com água.
+Erosion              | Solo sem vegetação transforma-se lentamente em areia.
+Grow Grass           | Ativa/desativa propagação natural de grama.
+Grow Trees           | Ativa/desativa propagação natural de árvores.
+Civ Babies           | Ativa/desativa nascimento de bebês nas vilas.
+Hunger               | Ativa/desativa o sistema de fome.
+Fire Spread          | Ativa/desativa propagação do fogo.
+─────────────────────|────────────────────────────────────────────────────────
+
+═══════════════════════════════════════════════════════════════════════════════
+6. IDADES (AGES)
+═══════════════════════════════════════════════════════════════════════════════
+
+O mundo atravessa 10 IDADES diferentes. Cada idade dura no mínimo 30 anos.
+O jogador controla a sequência pelo AGE CLOCK.
+
+As idades afetam:
+ – Comportamento dos biomas (velocidade de crescimento).
+ – Taxa de crescimento das plantas.
+ – Aparecimento de desastres naturais.
+ – Agressividade das criaturas.
+ – Eventos específicos (ex.: Corrupted cresce mais rápido na Age of Dark).
+
+Lista das 10 idades (em ordem):
+ 1. Age of Hope
+ 2. Age of Gold
+ 3. Age of Chaos
+ 4. Age of Plague
+ 5. Age of War
+ 6. Age of Dark and Despair  (Corrupted biome expande mais rápido aqui)
+ 7. Age of Magic
+ 8. Age of Sun              (Fire Elementals spawnam como ovos nesta era)
+ 9. Age of Ice
+ 10. Age of Rebirth
+
+═══════════════════════════════════════════════════════════════════════════════
+7. UNIDADES – STATS, FOME, FELICIDADE
+═══════════════════════════════════════════════════════════════════════════════
+
+"Unit" = qualquer entidade com menu próprio: criaturas, pessoas, barcos,
+estruturas móveis.
+
+STATS PRINCIPAIS:
+─────────────────────────────────────────────────────────────────────
+Stat              | Descrição
+──────────────────|──────────────────────────────────────────────────
+Health            | Vida máxima. Ao chegar a 0, a unidade morre.
+Damage            | Dano base por ataque.
+Speed             | Velocidade de movimento no mapa.
+Dodge             | % de chance de esquivar de um ataque.
+Accuracy          | % de chance de acertar um ataque.
+Armor             | Redução % do dano recebido.
+Diplomacy         | Influencia opinião entre reinos.
+Happiness         | Varia de -100 a 100. Afeta produtividade e risco de
+                  | rebelião.
+Hunger            | Cai 1 ponto a cada 1,6 meses. Ao chegar a 0, perde vida
+                  | por inanição.
+Nutrition         | Restaurada por comida.
+Stamina           | Usada em ações de combate.
+──────────────────|──────────────────────────────────────────────────
+
+STATS OCULTOS (existem no código mas não aparecem na UI):
+ – Rationality, Supply Timer Modifier, same/opposite trait modifiers.
+ – Supply Timer Modifier: afeta cooldown de troca de recursos entre vilas
+   do mesmo reino (default = 1).
+
+INFLUÊNCIAS NOS STATS:
+ – Traits (temporários ou permanentes).
+ – Idade da unidade.
+ – Cultura.
+ – Equipamento.
+ – Estado de saúde atual.
+ – Para subespécies: valores comparados ao genoma base (verde = acima,
+   amarelo = igual, vermelho = abaixo).
+
+FOME E NUTRIÇÃO:
+ – Fome diminui 1 ponto a cada 1,6 meses de jogo.
+ – Quando Hunger = 0: unidade começa a perder vida (inanição).
+ – Comida restaura fome e saúde simultaneamente.
+ – A unidade busca comida automaticamente quando fome está baixa (via Neurons).
+
+FELICIDADE (−100 a +100):
+ – Positiva: ter emprego, casa, comida, paz, amigos.
+ – Negativa: guerra, fome, desemprego, sem casa, doenças.
+ – Afeta: produtividade no trabalho, risk de rebelião, tasks de lazer.
+ – > 50: pode cantar, rir, brincar.
+ – < −70: pode xingar, socar árvores, chorar.
+
+═══════════════════════════════════════════════════════════════════════════════
+8. GENÉTICA, GENES E SUBESPÉCIES
+═══════════════════════════════════════════════════════════════════════════════
+
+GENOMA BASE:
+ – Cada espécie possui um genoma base com cromossomos.
+ – Cada cromossomo contém genes dispostos em "assentos" (gene seats).
+ – Os genes afetam diretamente os stats: força, ataque, velocidade, etc.
+ – O efeito pode ser amplificado ou reduzido conforme genes adjacentes.
+
+ESTADOS DOS GENES:
+ · DOURADO (Golden/Synergized): Dobra o bônus original do gene.
+   Para ativar: todos os nós/lados do gene devem estar em sinergia.
+ · NORMAL: Estado padrão, sem modificadores.
+ · RUIM (Bad): Reduz o bônus do gene pela metade.
+   Criado quando gene prejudicial ou amplificador prejudicial está adjacente.
+
+SINERGIA:
+ – Ocorre quando as CORES dos nós de genes adjacentes coincidem.
+ – Amplificadores dourados criam sinergia com qualquer gene adjacente.
+ – Genes mutagênicos podem obter efeitos similares aos amplificadores.
+
+GENE EDITOR (poder do jogador):
+ – Acessível pela aba Unit.
+ – Permite ao jogador editar diretamente os genes de uma subespécie.
+ – Subespécies com todos os cromossomos com pelo menos 1 gene mutagênico
+   podem evoluir via Monólito para uma nova espécie sapiente.
+
+SUBESPÉCIES:
+ – Variações do genoma base de uma espécie.
+ – Podem ser criadas naturalmente (evolução/Monólito) ou pelo jogador.
+ – Total de traits de subespécie para desbloquear: 204.
+ – Raridades dos traits de subespécie:
+     Normal:    +10 de mutação se estiver no pool de mutação.
+     Rare:      +6 de mutação.
+     Epic:      +3 de mutação.
+     Legendary: Desbloqueado via achievement, +1 de mutação.
+
+═══════════════════════════════════════════════════════════════════════════════
+9. TRAITS DE CRIATURA – LISTA COMPLETA (116 traits)
+═══════════════════════════════════════════════════════════════════════════════
+
+Total oficial: 116 creature traits desbloqueáveis.
+Desbloqueio: passe o mouse sobre o trait (círculo azul) em uma criatura, ou
+complete o achievement correspondente.
+
+COMO O SISTEMA FUNCIONA:
+ – Criaturas civilizadas podem ganhar traits ao nascer (genética/aleatório)
+   ou ao interagir com o mundo (comer certos alimentos, sofrer maldição, etc.).
+ – Jogador pode dar traits manualmente pelo Trait Editor (se desbloqueado).
+ – Dar traits via Trait Editor/Rain concede o trait "Scar of Divinity" na
+   criatura (impede conquistas The King of Kings, The Accomplished, The Demon).
+ – Criaturas não podem ter traits opostos ao mesmo tempo
+   (ex.: Bloodlust + Pacifist = impossível).
+
+HERANÇA:
+ – Traits indicam se são herdáveis.
+ – Se não há % explícita: herança = Birth Chance × 10.
+   (Ex.: Birth Chance 1,5% → 15% de herança.)
+ – Processo de herança:
+   1. Jogo percorre a lista toda e rola Birth Chance para cada trait.
+   2. Checa traits do 1º pai e rola herança.
+   3. Checa traits do 2º pai e rola herança.
+
+TRAITS DE LIVRO:
+ – 50% de chance de aparecer em unidades ao lerem um livro com esse trait.
+ – Não podem aparecer via Mutation Box.
+
+─────────────────────────────────────────
+CATEGORIA: BODY (Corpo)
+─────────────────────────────────────────
+Acid Blood       – Sangue ácido, dano a atacantes corpo-a-corpo.
+Acid Proof       – Imune a ácido.
+Acid Touch       – Ataques corpo-a-corpo causam dano ácido.
+Agile            – Velocidade e esquiva aumentadas.
+Attractive       – Mais parceiros, reproduz mais.
+Bubble Defense   – Cria bolha protetora.
+Eagle Eyed       – Alcance de visão aumentado.
+Fast             – Velocidade aumentada.
+Fat              – Saúde alta, velocidade baixa.
+Fertile          – Taxa de nascimento aumentada.
+Fire Blood       – Sangue de fogo, dano a atacantes.
+Fire Proof       – Imune a fogo.
+Freeze Proof     – Imune a congelamento.
+Giant            – Tamanho e stats aumentados drasticamente.
+Gluttonous       – Come mais, reproduz mais.
+Immune           – Imune a doenças.
+Infertile        – Não pode se reproduzir.
+Long Liver       – Vida útil muito mais longa.
+Lustful          – Reprodução muito frequente.
+Poison Immunity  – Imune a veneno.
+Poisonous        – Ataque causa envenenamento.
+Regeneration     – Recupera saúde ao longo do tempo.
+Shortsighted     – Alcance de visão reduzido.
+Slow             – Velocidade reduzida.
+Strong           – Dano e saúde aumentados.
+Thorns           – Dano passivo a qualquer atacante.
+Tiny             – Tamanho e stats reduzidos.
+Tough            – Armadura aumentada.
+Ugly             – Menos parceiros (diplomacia negativa).
+Venomous         – Ataque envenena o alvo.
+Weak             – Dano e saúde reduzidos.
+Weightless       – Pode flutuar (não afundado por água).
+
+─────────────────────────────────────────
+CATEGORIA: MIND (Mente)
+─────────────────────────────────────────
+Ambitious        – Busca liderança ativamente.
+Content          – Felicidade alta, pouco ambicioso.
+Deceitful        – Diplomacia negativa com outros.
+Evil             – Ataca criaturas inocentes, sem restrições morais.
+Genius           – Stats mentais e de tecnologia aumentados.
+Greedy           – Acumula recursos para si.
+Honest           – Diplomacia positiva, nunca mente.
+Madness          – Age aleatoriamente, ataca amigos e inimigos.
+Miner            – Prefere tarefas de mineração.
+Paranoid         – Desconfia de aliados, pode atacar amigos.
+Peaceful         – Nunca inicia combate.
+Strongminded     – Resistente a madness e efeitos mentais.
+Stupid           – Stats de tecnologia reduzidos.
+Voices in my head – Comportamento errático aleatório.
+
+─────────────────────────────────────────
+CATEGORIA: SPIRIT (Espírito)
+─────────────────────────────────────────
+Bloodlust        – Sempre procura combate.
+Burning Feet     – Deixa rastro de fogo ao caminhar.
+Cold Aura        – Resfria área ao redor.
+Flesh Eater      – Come carne, incluindo de outros seres inteligentes.
+Healing Aura     – Cura criaturas próximas.
+Immortal         – Não morre de velhice ou dano normal.
+Lucky            – Mais chance de eventos positivos.
+Moonchild        – Mais forte à noite/lua.
+Nightchild       – Prefere agir à noite.
+Pacifist         – Recusa-se a lutar (contrário de Bloodlust).
+Savage           – Stats de combate aumentados, menos diplomacia.
+Unlucky          – Mais chance de eventos negativos.
+
+─────────────────────────────────────────
+CATEGORIA: ACQUIRED (Adquiridos por eventos)
+─────────────────────────────────────────
+Blessed          – Stats aumentados temporariamente (bênção divina).
+Crippled         – Velocidade severamente reduzida.
+Cursed           – Stats reduzidos, comportamento negativo.
+Dragonslayer     – Bônus contra dragões.
+One Eyed         – Precisão reduzida.
+Golden Tooth     – Indicador visual de status/riqueza.
+Infected         – Processo de transformação em Zombie.
+Kingslayer       – Matou um rei (memória social).
+Mageslayer       – Matou um mago (memória social).
+MUSH Spores      – Infectado por esporos MUSH.
+Plague           – Com praga. Se propaga a outros próximos.
+Skin Burns       – Sofre dano de fogo passivo.
+Tumor Infection  – Infectado por tumor.
+Veteran          – Stats aumentados por experiência de combate.
+Wise             – Diplomacia e tecnologia aumentadas.
+
+─────────────────────────────────────────
+CATEGORIA: FUN / SPECIAL (Divertidos/Especiais)
+─────────────────────────────────────────
+Bomberman        – Carrega e usa bombas.
+Death Bomb       – Ao morrer, explode.
+Mark of Death    – Causa 100.001 de dano (mata qualquer criatura, exceto com
+                   99% de armadura e +100.001 de saúde – impossível em-game).
+Death Nuke       – Ao morrer, explosão nuclear.
+Energized        – Velocidade e stats drasticamente aumentados.
+Mega Heartbeat   – Frequência cardíaca em 12 bpm (curiosidade de lore).
+Pyromaniac       – Adora incendiar coisas.
+Super Health     – Saúde massivamente aumentada.
+Whirlwind        – Cria tornado ao se mover.
+Flower Prints    – Deixa flores ao caminhar.
+Light Lamp       – Emite luz ao redor.
+Shiny            – Aparência brilhante.
+
+─────────────────────────────────────────
+CATEGORIA: SPECIAL FLAGS (Flags especiais)
+─────────────────────────────────────────
+Boat             – É um barco (flag de categoria).
+Miracle Born     – Nasceu por milagre divino.
+Rat              – Classificado como rato (flag de taxonomia).
+Rat King         – Rei dos ratos.
+Scar of Divinity – Recebeu traits do jogador (impede certas conquistas).
+Zombie           – É um morto-vivo.
+
+TRAITS QUE NÃO APARECEM ALEATORIAMENTE (Restricted):
+ Grin Mark, Antimatter Essence, Geophagy, Unmoving, GMO, Uplifted,
+ e todos os fenótipos.
+ → Não podem ser dados pelo Mutation Box World Law.
+ → Não podem ser dados/removidos diretamente pelo Trait Editor.
+
+═══════════════════════════════════════════════════════════════════════════════
+10. TRAITS DE SUBESPÉCIE (204 traits)
+═══════════════════════════════════════════════════════════════════════════════
+
+204 traits desbloqueáveis para subespécies (além dos 116 de criatura).
+São traits que NÃO aparecem aleatoriamente – precisam ser desbloqueados via:
+ 1. Passar o cursor sobre novo trait (círculo de interrogação azul).
+ 2. Completar conquistas específicas (especialmente Legendary).
+
+Raridades:
+ – Normal (mais comuns): +10 ao pool de mutação.
+ – Rare: +6 ao pool de mutação.
+ – Epic: +3 ao pool de mutação.
+ – Legendary: +1 ao pool de mutação (desbloqueados só por achievements).
+
+Traits de subespécie incluem:
+ Prefrontal Cortex (sapência), Super Positivity, Parthenogenesis,
+ Acid Immunity, Arctic Adaptation, Desert Adaptation, Aquatic,
+ Nocturnal, Bioluminescent, Pack Hunter, e muitos outros.
+
+NOTA: "Prefrontal Cortex" é o trait que torna uma criatura SAPIENTE,
+permitindo que ela funde vilas e crie civilizações.
+
+═══════════════════════════════════════════════════════════════════════════════
+11. FENÓTIPOS (PHENOTYPES) – 52 VARIAÇÕES DE COR
+═══════════════════════════════════════════════════════════════════════════════
+
+Introduzidos na versão 0.50. Substituíram o sistema antigo de "Skin Colors".
+Determinam a aparência visual (cor de pele, pelo, etc.) das criaturas.
+Dependem da SUBESPÉCIE + BIOMA DE NASCIMENTO.
+
+São tratados como traits especiais de subespécie (não aparecem aleatoriamente).
+Desbloqueados passando o cursor sobre novos traits ou completando achievements.
+
+DOIS GRUPOS:
+ 1. FUR ANIMALS (animais de pelo)
+ 2. SKIN ANIMALS (animais de pele/humanos)
+
+LISTA COMPLETA DOS 52 FENÓTIPOS E CRIATURAS ASSOCIADAS:
+
+Cor              | Criaturas Associadas
+─────────────────|────────────────────────────────────────────────────────────
+Aqua             | Piranha, Tartaruga, Besouro, Cobra (Pântano), Sapo (Corrompido/Pântano)
+Black Blue       | Assimilador, Guaxinim, Foca, Avestruz, Pinguim, Mosca, Besouro
+Bright Blue      | Cold One, Broto de Flor
+Bright Green     | Alien, Sapo, Gafanhoto, Cobra (Selva), Espada de Cristal (Pântano)
+Bright Orange    | Raposa, Gato, Broto de Flor (Bordo)
+Bright Pink      | Espada de Cristal, Broto de Flor, Borboleta, Fada, Acid Blob (Corrompido)
+Bright Purple    | Espada de Cristal, Broto de Flor, Escorpião (Corrompido), Animais de Pelo (Celestial)
+Bright Red       | Espada de Cristal, Broto de Flor, Borboleta
+Bright Salmon    | Piranha, Caranguejo
+Bright Teal      | Espada de Cristal, Borboleta
+Bright Violet    | Borboleta, Animais de Pelo (Singularidade)
+Bright Yellow    | Greg, Espada de Cristal, Broto de Flor, Abelha, Borboleta, Ângelus, Escorpião (Deserto Arcano)
+Dark Blue        | Animais de Pelo (Cristal)
+Dark Green       | Mush, Crocodilo, Cobra, Tartaruga
+Dark Orange      | Lil Pumpkin, Macaco, Cobra, Galinha, Tatu, Capivara, Animais de Pelo (Bordo, Savana, Areia)
+Dark Pink        | Animais de Pelo (Doce)
+Dark Purple      | Animais de Pelo (Cogumelo)
+Dark Red         | Escorpião, Lobo (Infernal)
+Dark Salmon      | Monstro de Tumor
+Dark Teal        | Animais de Pelo (Cristal)
+Dark Violet      | Espada de Cristal (Corrompido)
+Dark Yellow      | Animais de Pelo (Deserto Arcano)
+Gray Black       | Mago do Mal, Doutor da Peste, Cachorro, Lobo, Guaxinim, Rato, Cabra, Animais de Pelo (Rocklands)
+Magical          | Animais de Pelo (Celestial, Cogumelo)
+Mid Gray         | Anão, Rinoceronte, Garl, Elfo (Corrompido), Orc (Corrompido), Animais de Pelo (Alho)
+Pink Yellow      | Sapo (Cogumelo), Animais de Pelo (Cogumelo)
+Skin Black       | Cachorro (Corrompido)
+Skin Blue        | Animais de Pelo (Pântano)
+Skin Dark        | Humano, Urso, Alpaca, Smore
+Skin Green       | Orc
+Skin Light       | Humano, Elfo, Anão
+Skin Medium      | Anão, Rinoceronte, Smore, Sapo (Savana)
+Skin Mixed       | Humano, Elfo, Mago Branco, Druida, Necromante, Bandido, Ovelha, Smore
+Skin Pale        | Orc (Permafrost), Unicórnio
+Skin Pink        | Animais de Pelo (Doce)
+Skin Purple      | Elfo (Celestial)
+Skin Red         | Demônio, Orc (Infernal)
+Skin Yellow      | Animais de Pelo (Deserto Arcano)
+Soil             | Búfalo, Besouro, Escorpião (Savana)
+Toxic Green      | Bioblob, Acid Blob
+White Gray       | Cachorro, Lobo, Coelho, Gato, Rato, Galinha, Ovelha, Vaca, Alpaca, Cabra, Rude Skull, Boneco de Neve
+Wood             | Cachorro, Lobo, Urso, Coelho, Gato, Avestruz, Rato, Galinha, Tatu, Capivara, Animais de Pelo (Areia)
+─────────────────|────────────────────────────────────────────────────────────
+
+NOTA: O sistema escolhe o fenótipo aleatoriamente entre as opções disponíveis
+para aquela subespécie+bioma, então a mesma criatura pode ter cores diferentes
+em cada mundo gerado.
+
+═══════════════════════════════════════════════════════════════════════════════
+12. REPRODUÇÃO E CICLO DE VIDA
+═══════════════════════════════════════════════════════════════════════════════
+
+TIPOS DE REPRODUÇÃO:
+ · Sexuada        – Requer dois parceiros compatíveis.
+ · Assexuada      – Uma unidade gera descendentes sozinha.
+ · Por ataque     – Algumas criaturas reproduzem-se ao atacar.
+                    (Ex.: Zombies infectam → transformam em zombie;
+                          Grey Goo clona ao tocar terra.)
+
+PARÂMETROS REPRODUTIVOS (por subespécie):
+ – Birth Rate:    Número de tentativas extra de gerar filhos.
+ – Oviparidade:  Põe ovos (os ovos eclodem após tempo de gestação).
+ – Viviparidade: Dá à luz diretamente.
+ – Gestação:     Período em meses de jogo até nascimento.
+ – Parthenogenesis (trait): A unidade reproduz instantaneamente, sem
+                            status de gravidez.
+
+PROCESSO DE HERANÇA DE TRAITS:
+ 1. Jogo percorre a lista completa de traits.
+ 2. Rola Birth Chance para cada trait (nascimento aleatório).
+ 3. Checa traits do 1º pai → rola probabilidade de herança.
+ 4. Checa traits do 2º pai → rola probabilidade de herança.
+ 5. Verifica se a criatura tem traits opostos → remove o conflito.
+
+CICLO DE VIDA:
+ Ovo/Bebê → Jovem → Adulto → Velho → Morte (se Old Age estiver ativa).
+ – Animais evoluídos passam por estágio de "egg" se tiverem oviparidade.
+ – Fire Elementals: spawnam como ovos na Age of Sun (desde 0.51).
+
+═══════════════════════════════════════════════════════════════════════════════
+13. COMPORTAMENTO – TASKS (117) E NEURONS (IA)
+═══════════════════════════════════════════════════════════════════════════════
+
+─────────────────────────────────────────
+NEURONS (Sistema de IA – introduzido na 0.50)
+─────────────────────────────────────────
+Os Neurons são a camada de inteligência artificial que rege TODAS as decisões
+das criaturas. Cada unidade possui uma rede de neurônios que avalia
+constantemente necessidades e ambiente para escolher a próxima tarefa.
+
+PROPRIEDADES DE CADA NEURÔNIO:
+ – Cooldown:  Tempo mínimo entre ativações.
+ – Weight:    Probabilidade de escolha dentro do pool.
+ – Priority:  Urgência (camadas de prioridade).
+
+CAMADAS DE PRIORIDADE (da mais alta para mais baixa):
+ 1. Immediate (sobrevivência imediata: fugir, se curar em emergência)
+ 2. Survival  (fome, saúde, segurança básica)
+ 3. Cognitive (combate ativo, decisões de guerra)
+ 4. Growth    (reprodução, construção, trabalho)
+ 5. Idle      (socialização, lazer, exploração)
+
+PROCESSO DE SELEÇÃO:
+ 1. Verifica se o neurônio não está em cooldown.
+ 2. Verifica se não está desativado.
+ 3. Verifica se as condições estão cumpridas.
+ 4. Calcula peso e prioridade.
+ 5. Executa a tarefa selecionada.
+
+PERSONALIDADE E TRAITS MENTAIS:
+ – Uma unidade com fome E o trait Aggressive pode optar por ROUBAR comida
+   em vez de colher.
+ – Traits mentais (Evil, Peaceful, Bloodlust, etc.) modificam o peso dos
+   neurônios relevantes.
+ – Estados emocionais (felicidade) também ajustam os pesos.
+
+─────────────────────────────────────────
+TASKS (117 tarefas comportamentais)
+─────────────────────────────────────────
+Organizadas em categorias:
+
+INIT (Inicialização):
+ – Acordar, inicializar estado, definir job.
+
+MOVEMENT (Movimento):
+ – Caminhar, nadar, flutuar, escalar, andar de barco.
+
+COMBAT (Combate):
+ – Atacar, defender, fugir, rastrear inimigo, recrutar.
+
+REPRODUCTION (Reprodução):
+ – Procurar parceiro, acasalar, dar à luz, chocar ovo.
+
+CHILDREN (Crianças):
+ – Amamentar, brincar, crescer.
+
+SOCIALIZING (Socialização):
+ – Conversar, formar amizade, pregar religião, cantar.
+ – Tarefas diplomáticas entre reinos.
+
+DELIVER RESOURCES (Entrega de Recursos):
+ – Coletar madeira, comida, pedra, minério.
+ – Carregar recursos para stockpile.
+ – Construir edifícios.
+ – Entregar recursos para outra vila (trading).
+
+REFLECTION (Lazer):
+ Lógica do sistema:
+  1. Se subespécie tem "Super Positivity" → tarefas alegres (rir, cantar, brincar).
+  2. Senão, monta Task Pool com pesos conforme estado:
+     – Felicidade > 50:  adiciona Happy Laughing, Singing.
+     – Felicidade < −70: adiciona Swearing, Punch a Tree, Crying.
+     – Trait Pyromaniac: adiciona Start Fire.
+     – É criança:        adiciona brincadeiras infantis.
+     – Idioma com trait Melodic: aumenta peso de cantar.
+  3. Sorteia uma tarefa do pool.
+
+═══════════════════════════════════════════════════════════════════════════════
+14. STATUS EFFECTS E DOENÇAS
+═══════════════════════════════════════════════════════════════════════════════
+
+STATUS EFFECTS = efeitos TEMPORÁRIOS (diferente de traits, que são permanentes).
+Modificam capacidades da unidade por um período limitado.
+
+STATUS             | EFEITO
+───────────────────|───────────────────────────────────────────────
+Silence            | Impede uso de magias.
+Shield             | Absorve dano (30 segundos, dado por White Mage).
+Curse              | Stats reduzidos, comportamento negativo.
+Madness            | Age aleatoriamente, ataca amigos e inimigos.
+Blessed            | Stats aumentados temporariamente.
+Cursed             | Stats reduzidos (versão de status).
+Shielded           | Protegido contra próximo ataque.
+Frozen             | Imobilizado completamente.
+Burning            | Perde vida por fogo continuamente.
+Poisoned           | Perde vida por veneno lentamente.
+Starving           | Derivado de Hunger = 0. Perde vida.
+Healing            | Recuperando saúde ativa.
+Pregnancy          | Status de gravidez.
+───────────────────|───────────────────────────────────────────────
+
+DOENÇAS (funcionam como status especiais que se propagam):
+
+MUSH Spores:
+ – Só pode ser introduzida pelo JOGADOR (não spawn natural).
+ – Ao morrer, unidade infectada: 70% de chance de espalhar esporos em raio 3.
+ – Espalha para criaturas próximas.
+ – Pode ser curada por: Divine Light, Cure Spell, Accelerated Healing.
+
+Zombie Infection:
+ – Transforma a vítima em Zombie após processo.
+ – Propaga-se por ataque.
+
+Plague:
+ – Propaga-se entre unidades próximas.
+ – Mata lentamente.
+ – Pode ser curada por Divine Light.
+
+Tumor Infection:
+ – Infecção por tumor. Pode transformar a criatura.
+
+═══════════════════════════════════════════════════════════════════════════════
+15. COMBATE, MAGIAS E PROJÉTEIS
+═══════════════════════════════════════════════════════════════════════════════
+
+INÍCIO DO COMBATE:
+ – Quando duas unidades de reinos HOSTIS se aproximam, o jogo avalia se há
+   inimigo para atacar.
+ – A unidade escolhe entre melee, ranged ou spell, conforme o que possui e
+   os status ativos (Silence bloqueia magia).
+
+TIPOS DE ATAQUE:
+ · Melee  – Corpo a corpo. Consome stamina.
+ · Ranged – Projétil (flecha, pedra, etc.).
+ · Spell  – Magia ofensiva ou utilitária. Verificações de Silence, Spell
+            Recovery, Slow, Combat Action Recovery antes de usar.
+
+LÓGICA DE COMBATE AVANÇADO:
+ – Ações avançadas usam uma chance-base de combate.
+ – Consomem stamina.
+ – Unidades com magia tentam primeiro usá-la. Se falhar (% de sucesso), usam
+   ataque normal.
+
+SPELLS (MAGIAS):
+─────────────────────────────────────────────────────────────────────────────
+Magia            | Usuário          | Alvo      | Sucesso | Dist. | Efeito
+─────────────────|──────────────────|───────────|─────────|───────|─────────
+Lightning        | Evil Mage        | Inimigos  | 30%     | 6     | Relâmpago médio
+Tornado          | Evil Mage        | Inimigos  | 2%      | 9     | Invoca tornado
+Fire             | Evil Mage        | Inimigos  | 20%     | 3     | Fogo em 3 tiles
+Curse            | Necromancer      | Inimigos  | 20%     | 4     | Amaldiçoa área
+Random Teleport  | Evil/White Mage  | Próprio   | 70%*    | 6     | Teleporte p/ terra
+Blood Rain       | Todos os mages   | Próprio   | 50%**   | 0     | Cura 20% HP
+Spawn Skeleton   | Necromancer      | Próprio   | 60%***  | 0     | Invoca 1 esqueleto
+Shield           | White Mage       | Próprio   | 20%     | 0     | 30s de escudo
+Cure             | Plague Doctor    | Próprio   | 20%     | 0     | Gotas de cura
+Spawn Tree Fert. | Druid            | Região    | 100%    | 0     | Fertiliza árvores
+─────────────────────────────────────────────────────────────────────────────
+* Ativa quando saúde < 60%.
+** Ativa quando saúde < 90%.
+*** Ativa se ≤ 6 esqueletos na mesma chunk.
+
+PROJÉTEIS:
+─────────────────────────────────────────────────────────────────────────────
+Projétil         | Efeito
+─────────────────|───────────────────────────────────────────────────────────
+Arrow            | Dano perfurante.
+Snowball         | Congela a unidade-alvo.
+Rock             | Dano contundente.
+Firebomb         | Incendeia a área no ponto de impacto.
+Torch            | Fogo no ponto de impacto.
+Fireball         | Pequena explosão de fogo.
+Madness Ball     | Causa Madness no alvo.
+Plasma Ball      | Dano elétrico/plasma.
+Shotgun Bullet   | Vários fragmentos em cone.
+Red Orb          | Efeito de fogo.
+Blue Orb         | Efeito de gelo/lentidão.
+Green Orb        | Efeito de veneno.
+Bone             | Dano físico (usado por Necromancers).
+Skull            | Projétil amaldiçoado.
+Cannonball       | Destrói terreno e construções.
+Acid Ball        | Dissolve unidades e tiles.
+─────────────────────────────────────────────────────────────────────────────
+
+MORTE E PILHAGEM:
+ – Ao morrer, a unidade deixa cair equipamento e recursos (loot).
+ – Em bioma Corrupted: corpo pode se transformar em Esqueleto.
+ – Dependendo de traits/bioma: pode surgir como Fantasma.
+
+═══════════════════════════════════════════════════════════════════════════════
+16. METAMORFOSE
+═══════════════════════════════════════════════════════════════════════════════
+
+Metamorphosis = processo pelo qual uma criatura se transforma em OUTRA ESPÉCIE.
+É diferente da evolução normal (é radical e muitas vezes irreversível).
+
+GATILHOS DE METAMORFOSE:
+ – Atingir nível máximo de experiência.
+ – Morrer (alguns casos: a morte dispara a transformação).
+ – Ser infectada por uma substância específica.
+ – Entrar em bioma específico.
+ – Condição de saúde/tempo.
+
+EXEMPLOS:
+ – Flower Bud → Lulliar (ao atingir nível máximo).
+ – Crystal Sword → Crystal Golem (ao ser exposto a magia).
+ – Humano infectado por MUSH → Criatura MUSH (lentamente).
+ – Unidade infectada → Zombie.
+ – Unidade em bioma Corrupted após morte → Esqueleto.
+ – Licantropia (se ativa): ciclo com lua cheia.
+
+MECÂNICA INTERNA:
+ – Sistema de "triggers" compara estado atual com condições pré-programadas.
+ – Quando TODAS as condições são verdadeiras → troca o tipo da criatura.
+ – Metamorfoses podem ser cíclicas (vão e voltam conforme condições).
+
+═══════════════════════════════════════════════════════════════════════════════
+17. MONÓLITO E EVOLUÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+O Monolith é uma estrutura/poder especial que ACELERA DRASTICAMENTE a evolução.
+(Atualização Monolith foi lançada em Junho 2025 para todas as plataformas.)
+
+COMO FUNCIONA:
+ – Área de efeito: ~10 tiles ao redor.
+ – Durante o mês de "Monolith" (Abril no calendário do jogo), ativa e pulsa.
+ – Criaturas que entram em contato recebem grande quantidade de "pontos de
+   evolução".
+ – Pode tornar criaturas SAPIENTES (Prefrontal Cortex).
+ – Pode evoluir animais para formas Evolved (ex.: Lobo → Howleer).
+ – Pode influenciar evolução cultural (desbloqueia tecnologias em civs próximas).
+ – Tenta evoluir até 3 criaturas por ativação.
+ – Pode aplicar mutações baseadas no bioma local.
+
+CONDIÇÃO PARA EVOLUÇÃO COMPLETA (ex.: Raposa → Slypaw):
+ 1. Todos os cromossomos do genoma da raposa devem ter pelo menos 1 gene
+    mutagênico.
+ 2. A raposa precisa estar na área de efeito do Monólito ativo.
+ 3. (Mesmo assim pode não funcionar imediatamente – é probabilístico.)
+
+RECARGA:
+ – Após várias utilizações, o Monólito perde poder.
+ – Pode ser recarregado com recursos raros ou intervenção divina.
+
+═══════════════════════════════════════════════════════════════════════════════
+18. CIVILIZAÇÕES – VILAS, REINOS, POLÍTICA
+═══════════════════════════════════════════════════════════════════════════════
+
+FUNDAÇÃO DE UMA VILA:
+ 1. Uma criatura sapiente (Prefrontal Cortex) encontra local adequado.
+ 2. A zona 8×8 deve estar completamente em terra, ≥ 300 tiles conectados,
+    sem montanhas, sem outra cidade.
+ 3. A criatura começa a construir uma BONFIRE.
+ 4. A Bonfire funda a vila e cria uma nova CULTURA.
+
+VISUALMENTE POR RAÇA:
+ – Humanos, Elfos, Orcs: constroem de forma mais aleatória.
+ – Anões: constroem concentrando no centro (vilas mais organizadas).
+
+VILAS:
+ – Conjunto de edifícios + cidadãos de uma raça.
+ – Moradores constroem casas, coletam comida, montam exércitos.
+ – Podem mudar de reino durante guerras (conquista ou rebelião).
+ – Cada vila tem seu próprio exército.
+
+REINOS:
+ – Conjunto de 1 ou mais vilas sob comando de um REI.
+ – Cada reino tem: nome, bandeira, lema, atributos e traits de reino.
+ – O rei governa e toma decisões.
+ – Apenas membros de clã podem executar plots importantes.
+
+KINGDOM OPINIONS (Relações entre Reinos):
+ Fatores que afetam a opinião:
+  – Diplomacia do rei.
+  – Humor do rei.
+  – Distância das fronteiras.
+  – Estar em guerra.
+  – Inimigos comuns.
+  – Same/opposite trait modifiers dos reis.
+  – Traits de cultura compatíveis ou incompatíveis.
+ → Pontuação de opinião → determina guerras e alianças.
+
+REBELIÕES:
+ – Vilas com relação baixa com o reino criam um novo reino e iniciam guerra.
+ – Pode acontecer naturalmente ou ser forçada pelo poder Inspiration.
+ – Se múltiplas vilas se rebelam ao mesmo tempo, podem unir-se num reino.
+
+═══════════════════════════════════════════════════════════════════════════════
+19. CONSTRUÇÃO DE CIDADES E EDIFÍCIOS
+═══════════════════════════════════════════════════════════════════════════════
+
+LÓGICA DE CONSTRUÇÃO:
+ – Cooldown fixo: 1 mês para planejar novo edifício.
+ – NÃO pode planejar se: inimigos na área, incêndio ativo, captura em andamento.
+ – Só constrói/melhora UM edifício por vez.
+ – Escolha depende de: tecnologia disponível, população, limites de construção,
+   pré-requisitos de outros edifícios.
+
+EDIFÍCIOS CIVILIZACIONAIS:
+─────────────────────────────────────────────────────────────────────────────
+Edifício         | Função
+─────────────────|───────────────────────────────────────────────────────────
+Bonfire          | Funda a vila e a cultura. +3 capacidade de casas.
+House            | Abriga cidadãos. Tiers: Tent → 1 → 2 → 3 → 4 → 5 → 6.
+(Tier 0–6)       | Cada tier suporta mais habitantes. 2 variações visuais por
+                 | tier acima do nível 0. Raças não-clássicas: apenas tier 1.
+Town Hall        | Residência do rei/líder. Guarda até 3 livros.
+Well             | +3 capacidade de casas. Pode apagar fogos.
+Windmill         | Cria terrenos agrícolas (fields) ao redor.
+Mine             | Mineiros extraem minerais. Minerais surgem nos tiles adj.
+Temple           | +2 capacidade de casas. Local de oração/religião.
+Docks (Tier 1–2) | Constrói barcos. +1 capacidade de casas. Ponto de comércio.
+                 | Ponto de retorno/reparo de barcos.
+Watchtower       | Dispara 3 flechas por vez contra inimigos.
+Barracks         | Treina e mantém o exército.
+Library          | Guarda até 5 livros.
+Market           | Ponto de troca de recursos.
+─────────────────|───────────────────────────────────────────────────────────
+
+NOTAS ESPECIAIS:
+ – Docks ficam na costa e têm dois tiers.
+ – Barcos de comércio geram 5 de ouro ao chegar a um dock de reino NÃO inimigo.
+ – Construções de Fairies (Fadas): incluem edifícios e barcos únicos
+   (adicionados na atualização 0.50.6).
+
+═══════════════════════════════════════════════════════════════════════════════
+20. ECONOMIA, RECURSOS E COMÉRCIO
+═══════════════════════════════════════════════════════════════════════════════
+
+RECURSOS PRINCIPAIS:
+─────────────────────────────────────────────────────────────────────────────
+Recurso          | Origem                     | Uso
+─────────────────|────────────────────────────|──────────────────────────────
+Wood             | Árvores                    | Construção, armas básicas
+Food             | Arbustos, caça, pesca,     | Alimentar população
+                 | campos agrícolas           |
+Stone            | Montanhas, colinas         | Construção
+Common Metals    | Minério (Cobre, Ferro)     | Ferramentas, armas
+Bronze           | Fundição de metais comuns  | Armas nível médio
+Iron             | Minas de minério           | Armas avançadas
+Steel            | Processamento de ferro     | Armas top-tier
+Silver           | Minas (biomas específicos) | Joalharia, armas especiais
+Mythril          | Minas raras                | Armas top-tier
+Adamantine       | Minas raras                | Armas máximo nível
+Gold             | Minas + barcos de comércio | ÚNICO recurso monetário
+Gems             | Minas                      | Joalharia, acessórios
+Leather          | Animais abatidos           | Armaduras
+Bone             | Animais / Bioma Corrupted  | Acessórios
+Herb             | Campos / biomas especiais  | Poções, cura
+Bread            | Produção civilizacional    | Comida processada
+─────────────────|────────────────────────────|──────────────────────────────
+
+ARMAZENAMENTO:
+ – Recursos guardados nos STOCKPILES (armazéns) das vilas.
+ – Usados para construir edifícios, fabricar equipamento, alimentar população.
+
+OURO (GOLD):
+ – Único recurso monetário principal.
+ – NÃO nasce naturalmente em biomas.
+ – Fontes: minas e barcos de comércio (geram 5 de ouro ao chegar a dock
+   de reino não inimigo).
+ – Usado para: construção de vários edifícios, recrutamento de exércitos,
+   manutenção da vila.
+
+TROCA ENTRE VILAS:
+ – Reinos NÃO trocam entre si.
+ – Apenas vilas do MESMO REINO compartilham recursos.
+ – Só após tecnologia de TRADING ser desbloqueada.
+ – Supply Timer: cooldown base de 6 meses. Modificado por:
+   → Traits do líder da vila.
+   → Supply Timer Modifier stat (hidden).
+
+═══════════════════════════════════════════════════════════════════════════════
+21. BARCOS E DOCAS
+═══════════════════════════════════════════════════════════════════════════════
+
+TIPOS DE BARCOS:
+─────────────────────────────────────────────────────────────────────────────
+Tipo             | Função
+─────────────────|───────────────────────────────────────────────────────────
+Trading          | Navega até docks de reinos não inimigos. Gera 5 gold.
+Fishing          | Produz comida (pesca).
+Transport        | Move exércitos e colonos entre ilhas/continentes.
+─────────────────|───────────────────────────────────────────────────────────
+
+CARACTERÍSTICAS:
+ – Cada raça tem versões visuais próprias de 2 tipos de barcos.
+ – Barcos têm menu de unidade (podem ser selecionados, inspecionados).
+ – Podem ser "mortos" (destruídos) como qualquer unidade.
+ – Construídos nos Docks.
+ – [Bug corrigido em 0.51]: Barcos não são mais destruídos ao serem jogados
+   sobre montanhas.
+
+DOCAS (Docks):
+ – Localizadas na costa.
+ – Dois tiers (nível 1 e 2).
+ – Permitem construção de barcos.
+ – Servem como parada de barcos de comércio e ponto de retorno/reparo.
+ – +1 capacidade máxima de casas da vila.
+
+═══════════════════════════════════════════════════════════════════════════════
+22. CLÃS, FAMÍLIAS E GENEALOGIA
+═══════════════════════════════════════════════════════════════════════════════
+
+FAMÍLIAS:
+ – Relações de parentesco: pais e filhos.
+ – A tab de Genealogia mostra a árvore completa visualmente.
+ – Nota: famílias nem sempre refletem perfeitamente toda a genealogia
+   (limitações do registro).
+
+CLÃS:
+ – Linhagens REAIS/POLÍTICAS que sustentam poder em reinos e vilas.
+ – Só membros de clã podem executar plots importantes:
+   → Declarar guerra.
+   → Formar alianças.
+   → Escrever livros.
+   → Liderar rebelião.
+   → Fundar religião.
+ – Clãs podem ter CLAN TRAITS que afetam lealdade e influência.
+ – Apenas membros de clã com stats mínimos podem executar o New Book plot.
+
+SEPARAÇÃO DE SISTEMAS:
+ WorldBox separa explicitamente:
+  · Sangue (família/genealogia biológica)
+  · Poder (clã/linhagem política)
+  · Herança (traits herdados geneticamente)
+  · Política (posição de liderança atual)
+
+═══════════════════════════════════════════════════════════════════════════════
+23. CULTURAS, IDIOMAS E RELIGIÕES
+═══════════════════════════════════════════════════════════════════════════════
+
+CULTURAS:
+ – Nasce na BONFIRE quando uma vila é fundada.
+ – Espalha-se por zonas da mesma raça.
+ – Pode existir independentemente de fronteiras de vila e reino.
+ – Contém: nome, bandeira, traits, livros, stats, aparência visual.
+ – Representa o que diferencia civilizações ao longo do tempo.
+ – Pode ter traits específicos de cultura.
+
+IDIOMAS (Languages):
+ – Meta-objeto relacionado aos livros que as civilizações escrevem.
+ – Idiomas com o trait MELODIC: aumentam peso de cantar nas tasks de lazer.
+ – Só membros de clã podem criar um novo idioma (via escrita de livros).
+ – Requisitos para escrever livro (New Book plot):
+   → Inteligência mínima, Warfare, Stewardship, Diplomacy.
+   → Level 10.
+   → 200 money.
+   → Cultura/idioma/vila com espaço de livro disponível.
+
+RELIGIÕES:
+ – Subsistema social que SURGE ESPONTANEAMENTE quando:
+   → Um Temple está construído na vila.
+   → A vila tem pelo menos um membro de clã com o trait Spiritual.
+ – Cada religião recebe: nome, símbolo, conjunto de traits.
+ – Traits das religiões afetam seguidores (ex.: Pacifist, Zealous).
+ – Espalha-se entre unidades da mesma cultura e pode cruzar fronteiras.
+ – Líderes religiosos podem aparecer e influenciar plots.
+ – Podem DIVIDIR-SE (cismas religiosos).
+ – Se a World Law "Magic Rites" estiver ativa:
+   → Rituais religiosos podem desencadear eventos sobrenaturais
+     (chuvas de sangue, pragas, milagres).
+ – [Atualização 0.51]: A maioria dos seres sapientes pode agora formar
+   civilizações próprias com culturas, podendo levar raças "malignas"
+   (Demons, Evil Mages) a se tornarem pacifistas ou xenófilas.
+
+═══════════════════════════════════════════════════════════════════════════════
+24. LIVROS, BIBLIOTECAS E PLOTS
+═══════════════════════════════════════════════════════════════════════════════
+
+LIVROS (Books):
+ – Recurso especial guardado pelas vilas.
+ – Concedem efeitos de stats quando lidos por unidades.
+ – Escritos por membros de clã via "New Book" plot.
+ – Requisitos: Int, Warfare, Stewardship, Diplomacy mínimos + Level 10 +
+               200 money + cultura/idioma/vila com espaço.
+ – Libraries: guardam até 5 livros.
+ – Town Halls: guardam até 3 livros.
+ – Podem conter traits que têm 50% de chance de ser passados ao leitor.
+
+PLOTS:
+ – Planos de ação executados por membros de clã.
+ – Aparecem como ícones no mapa acima das unidades envolvidas.
+ – O jogador pode ver progresso, cancelar ou FORÇAR um plot.
+ – Exemplos de plots:
+   → Declarar guerra.
+   → Rebelião.
+   → Escrever um livro.
+   → Fundar religião.
+   → Criar aliança.
+   → Assassinar rei.
+   → Migrar para outra cidade.
+   → Encontrar amante.
+ – [Bug corrigido em 0.51.2]: Plots, neurons de cidade, ações de captura
+   não mais executavam enquanto unidades se moviam entre cidades/reinos.
+
+═══════════════════════════════════════════════════════════════════════════════
+25. EXÉRCITOS E GUERRA
+═══════════════════════════════════════════════════════════════════════════════
+
+EXÉRCITOS:
+ – Cada vila tem seu próprio exército.
+ – Composto por cidadãos da vila (recrutados nos Barracks).
+ – Essenciais para defender vilas e vencer guerras.
+ – [Atualização 0.51 – ArmyBox]: Introduziu o sistema de Armies como
+   meta-objeto (pode ser visto e gerenciado no mapa).
+ – Novas ferramentas de mapa: multi-toggle zones para kingdoms, cities,
+   alliances, armies.
+
+GUERRA:
+ – Confronto armado entre dois ou mais reinos.
+ – Causas: Kingdom Opinions baixa, Whisper of War (poder), Spite (poder).
+ – Pode ser parada instantaneamente com o poder Friendship.
+ – Guerras podem ser forçadas pelo jogador com o poder Spite.
+ – Envolve: armys atacando vilas inimigas, saqueando recursos, matando
+   população (inclusive civis).
+ – A guerra termina quando: um lado é destruído ou a paz é feita.
+ – Wars List: poder que mostra todas as guerras em andamento.
+ – War Lines: mostra linhas de conflito no mapa.
+
+CAPTURA DE VILAS:
+ – Exércitos podem capturar vilas inimigas.
+ – Vila capturada muda de reino.
+ – Durante captura: vila não pode planejar construção.
+
+NOTA: Em guerras inter-raciais, exércitos eliminam TODA a população
+(homens, mulheres, crianças) sem exceção.
+
+═══════════════════════════════════════════════════════════════════════════════
+26. ALIANÇAS
+═══════════════════════════════════════════════════════════════════════════════
+
+ – Grupos de 2 ou mais reinos para defesa mútua.
+ – Permitem múltiplos reinos de defenderem mutuamente ou conquistarem inimigo
+   em comum.
+ – Podem surgir por: diplomacia natural (Kingdom Opinions altos) ou pelo
+   poder Unity (forçado pelo jogador).
+ – O jogador pode visualizar alianças com o poder Alliances.
+ – [0.51.2]: Novas ferramentas de seleção de mapa incluem toggle de alianças.
+
+═══════════════════════════════════════════════════════════════════════════════
+27. EQUIPAMENTOS E ITENS
+═══════════════════════════════════════════════════════════════════════════════
+
+CATEGORIAS:
+ · Melee Weapons:  Sword, Axe, Hammer, Spear.
+ · Ranged:         Bow.
+ · Armaduras:      Helmet, Armor, Boots.
+ · Acessórios:     Ring, Amulet.
+
+HIERARQUIA DE MATERIAIS (do mais fraco ao mais forte):
+ Wood → Stone → Copper/Common Metal → Bronze → Silver → Iron → Steel →
+ Mythril → Adamantine.
+ Bone:    usado em acessórios.
+ Leather: usado em armaduras.
+
+RARIDADES (Modifier Level):
+ Normal → Rare → Epic → Legendary.
+ Itens Legendary recebem nome único gerado pelo sistema de nomes.
+
+ARMAS ESPECIAIS:
+ – Flame Sword:         Dropped por Demons.
+ – Flame Hammer:        Variação.
+ – Ice Hammer:          Variação de gelo.
+ – Evil Staff:          Usado por Evil Mages.
+ – White Staff:         Usado por White Mages.
+ – Druid Staff:         Usado por Druids.
+ – Necromancer Staff:   Usado por Necromancers.
+ – Plague Doctor Staff: Usado por Plague Doctors.
+ – Alien Blaster:       Usado por Aliens.
+ – Shotgun:             Variante especial.
+ – Stick Staff:         Variante básica.
+
+MONEY vs GOLD:
+ – O sistema diferencia "money" (moeda interna de transações) de "gold"
+   (recurso físico extraído).
+
+═══════════════════════════════════════════════════════════════════════════════
+28. PODERES DO JOGADOR – 374 PODERES EM 8 ABAS
+═══════════════════════════════════════════════════════════════════════════════
+
+Total oficial: ~374 poderes (wiki oficial, versão 0.51).
+Organizados em 8 abas (detalhadas na seção 2).
+
+ABA MAIN (15 poderes) – detalhe completo:
+ 1. Pause / Resume Game
+ 2. Hourglass (×1, ×2, ×3, ×4, ×5 velocidade)
+ 3. Statistics (estatísticas detalhadas do mundo atual)
+ 4. Eye of Insight (revela criaturas com traits não descobertos)
+ 5. World Laws
+ 6. Ages (controle das idades)
+ 7. World History
+ 8. Knowledge (774 desbloqueáveis)
+ 9. Achievements
+ 10. Debug Menu
+ 11. Settings (som, gráficos, idioma)
+ 12. News / Patchlog
+ 13. Tutorial Bear
+ 14. About WorldBox
+ 15. Steam Workshop
+
+ABA UNIT – poderes de unidade:
+ – Possession (controlar diretamente)
+ – Favorite (marcar como favorito)
+ – Follow (câmera segue a unidade)
+ – Trait Editor (editar traits)
+ – Equipment Editor (editar equipamento)
+ – Mind View (ver estado mental/neurons)
+ – Genealogy (árvore genealógica)
+ – Gene Editor (editar genes)
+
+ABA WORLD SHAPING (47 poderes) – ver seção 2.
+ABA NOOSPHERE AND LIFE (61 poderes) – ver seção 2.
+ABA ANIMALS, CREATURES AND MONSTERS (117 poderes) – ver seção 29-31.
+ABA NATURE AND DISASTERS – ver seção 2.
+
+ABA DESTRUCTION AND CHAOS (16 poderes):
+ 1. TNT            – Explosão imediata pequena.
+ 2. Delayed TNT    – Explosão com atraso.
+ 3. Water Bomb     – Inunda área.
+ 4. Landmine       – Mina no chão.
+ 5. Fuse           – Conecta e explode minas.
+ 6. Fireworks      – Fogos de artifício (visual + fogo).
+ 7. Grenade        – Granada de mão.
+ 8. Bomb           – Bomba média.
+ 9. Napalm Bomb    – Espalha fogo em área.
+ 10. Atomic Bomb    – Grande explosão + radiação.
+ 11. Antimatter Bomb – Obliterar tudo na área.
+ 12. Tsar Bomba     – Maior explosão do jogo.
+ 13. Bowling Ball   – Esfera que destrói tudo no caminho.
+ 14. Heat-Ray       – Raio de calor que cria lava.
+ 15. Meteorite      – Meteoro do céu.
+ 16. Infinity Coin  – Mata METADE de todas as criaturas do mundo (arredonda para cima).
+
+ABA OTHER VARIOUS POWERS (31 poderes):
+ – About WorldBox, Tutorial Bear, News.
+ – Divine Magnet (pega criaturas e move).
+ – Divine Light (remove doenças, madness, infecções | pode curar mas também
+   ferir certas criaturas | encerra plots | interrompe tasks).
+ – Monolith.
+ – Golden Brain (atrai zumbis).
+ – Corrupted Brain (atrai criaturas).
+ – Blood Rain (restaura 20% HP e remove burning).
+ – Gamma Rain / Omega Rain / Delta Rain (Edit e Drop – rains de traits).
+ – Loot Rain (Edit e Drop).
+ – Clone Rain.
+ – Madness (enlouquece criaturas).
+ – Blessing.
+ – The Plague.
+ – Zombie Infection.
+ – Tumor.
+ – Gray Goo.
+ – Crabzilla.
+ – Printer (Hexagon) – cria paisagem automaticamente.
+ – Debug Menu.
+
+═══════════════════════════════════════════════════════════════════════════════
+29. CATÁLOGO DE CRIATURAS (118) – BASIC CREATURES
+═══════════════════════════════════════════════════════════════════════════════
+
+CIVILIZADOS CLÁSSICOS:
+ Human   – Raça base. Formam civilizações. Skin colors variadas.
+ Elf     – Longevos. Aliados naturais de ursos. Construção mais aleatória.
+ Dwarf   – Anões. Constroem concentrado no centro. Cidades organizadas.
+ Orc     – Sempre possuem traits de agressividade.
+
+ESPECIAIS NÃO-CIVILIZADOS:
+ Snowman       – Boneco de neve. Passivo.
+ Evil Mage     – Mago maligno. Usa Lightning, Tornado, Fire. Rival do White Mage.
+ White Mage    – Mago branco. Shield, Blood Rain, Teleporte.
+ Necromancer   – Invoca esqueletos. Emerge de minas.
+ Druid         – Mago da natureza. Fertiliza árvores e grama.
+ Plague Doctor – Médico da peste. Imune a doenças. Cura a si mesmo.
+ Cold One      – Criatura ancestral do frio. Odeia tudo que está vivo.
+ Demon         – Demônio. Espalha fogo. Dropa Flame Sword. Trait: Evil.
+ Angel         – Anjo. Celestial.
+ Alien         – Alienígena. Usa Alien Blaster.
+
+ANIMAIS:
+ Cat, Dog, Chicken, Rabbit, Monkey, Fox, Sheep, Cow, Armadillo, Raccoon,
+ Wolf, Bear, Rhino, Buffalo, Hyena, Rat, Alpaca, Capybara, Goat, Penguin,
+ Ostrich, Crab, Scorpion, Turtle, Crocodile, Snake, Frog, Piranha, Seal,
+ Unicorn.
+
+CRIATURAS ESPECIAIS BÁSICAS:
+ Flower Bud    – Pode metamorfosear em Lulliar.
+ Crystal Sword – Pode metamorfosear em Crystal Golem.
+ Bitba         – Criatura especial.
+ Garl          – Criatura especial de alho.
+ Smore         – Criatura especial.
+ Acid Blob     – Blob ácido. Variante: Acid Blob (Corrompido).
+
+INSETOS:
+ Bee, Butterfly, Beetle, Grasshopper, Fly.
+
+═══════════════════════════════════════════════════════════════════════════════
+30. CATÁLOGO DE CRIATURAS EVOLUÍDAS (EVOLVED CREATURES)
+═══════════════════════════════════════════════════════════════════════════════
+
+Formas evoluídas de animais (via Monólito ou evolução natural):
+
+Animal Base      → Forma Evoluída
+──────────────── │ ──────────────
+Gato (Cat)       │ Meowmorph
+Cão (Dog)        │ Barkfolk
+Galinha          │ Pecklord
+Coelho           │ Hopper
+Macaco           │ Monke
+Raposa           │ Slypaw
+Ovelha           │ Baakin
+Vaca             │ Mootaur
+Tatu             │ Armaldar
+Guaxinim         │ Bandit*
+Lobo             │ Howleer
+Urso             │ Grranth
+Rinoceronte      │ Armoroc
+Búfalo           │ Buffolon
+Hiena            │ Lulclaw
+Rato             │ Nibling
+Alpaca           │ Charmaca
+Capivara         │ Chillbara
+Cabra            │ Herdor
+Pinguim          │ Coolbeak
+Caranguejo       │ Crablin
+Escorpião        │ Scorp
+Tartaruga        │ Turtok
+Crocodilo        │ Reptiloid
+Cobra            │ Snok
+Sapo             │ Ribbit
+Piranha          │ Gnapkin
+Besouro          │ Dunglord
+Unicórnio        │ Punkcorn  [adicionado em 0.51.2 – ArmyBox]
+──────────────── │ ──────────────
+* Bandit é tanto forma evoluída do Guaxinim quanto NPC separado.
+
+ESPECIAIS EVOLUÍDOS:
+ Flower Bud   → Lulliar
+ Crystal Sword → Crystal Golem
+ (bioma Lemon) → Lemon Man
+ (bioma Garlic) → Garlic Man
+ (bioma Candy)  → Candy Man
+ (bioma Acid)   → Acid Gentleman
+
+═══════════════════════════════════════════════════════════════════════════════
+31. CRIATURAS ESPECIAIS / OTHER CREATURES
+═══════════════════════════════════════════════════════════════════════════════
+
+OTHER CREATURES:
+ Crabzilla     – Controlável pelo jogador. Dispara lasers. Mascote do jogo.
+ Dragon        – Boss. Grande e destrutivo.
+ Robot Santa   – Presente natalino destrutivo.
+ UFO           – Voa e dispara Death Ray aleatoriamente.
+                 Se derrubado: Aliens saem e atacam tudo.
+ Living Plant  – Planta viva animada.
+ Living House  – Casa viva animada.
+ Tumor Monster – Gerado por bioma Tumor.
+ Bioblob       – Gerado por bioma Biomass.
+ Lil' Pumpkin  – Gerado por bioma Pumpkin.
+ Super Pumpkin – Versão maior do Lil' Pumpkin.
+ Assimilator   – Gerado por bioma Cyber/Cybercore.
+ Zombie        – Morto-vivo. Ataca o Golden Brain.
+ Skeleton      – Esqueleto. Surge em bioma Corrupted.
+ Ghost         – Fantasma. Surge em bioma Corrupted.
+ MUSH          – Criatura fúngica.
+ Rude Skull    – Crânio impertinente.
+ Fire Skull    – Crânio de fogo.
+ Fairy         – Fada. Tem edifícios e barcos próprios (0.50.6).
+ Fire Elemental – Spawn como ovo na Age of Sun.
+ Greg          – Medos dos habitantes do mundo em forma física. Cabeça gigante
+                 em expressão de horror permanente.
+ Boat          – Barco (é uma unidade com menu).
+ God Finger    – Dedo do deus (o cursor do jogador, personificado).
+ Blue Ant      – Formiga azul.
+ Green Ant     – Formiga verde.
+ Black Ant     – Formiga preta.
+ Red Ant       – Formiga vermelha.
+ Printer       – Formiga hexagonal que cria paisagens.
+ Sand Spider   – Aranha da areia.
+ Worm          – Minhoca/verme subterrâneo.
+ Tutorial Bear – O ursinho do tutorial.
+ Grey Goo      – Devora terra e converte em Deep Ocean.
+                 Reproduz-se por contato.
+ Conway        – Conway's Game of Life. Automato celular que destrói.
+                 Controlado pela World Law "Gaia's Covenant" (para ser contido).
+
+═══════════════════════════════════════════════════════════════════════════════
+32. CRIATURAS REMOVIDAS E NÃO UTILIZADAS
+═══════════════════════════════════════════════════════════════════════════════
+
+Existem nos arquivos do jogo mas NÃO aparecem no jogo vanilla.
+Podem ser acessadas via Debug Menu ou Modding.
+
+REMOVED CREATURES: criaturas de versões antigas que foram retiradas.
+UNUSED CREATURES: criaturas planejadas mas não implementadas ainda.
+
+Exemplo notável de unused content:
+ – "iconVermin": ícone de trait não utilizado com descrição
+   "Tiny creatures. A snack for bigger animals" (possivelmente para insetos
+   como "insect meat" na cadeia alimentar).
+
+═══════════════════════════════════════════════════════════════════════════════
+33. KNOWLEDGE – 774 DESBLOQUEÁVEIS
+═══════════════════════════════════════════════════════════════════════════════
+
+O menu KNOWLEDGE é um arquivo pessoal de descobertas do jogador.
+Total: 774 itens desbloqueáveis.
+Desbloqueio: passe o mouse sobre itens novos (círculo azul).
+
+CATEGORIAS:
+ 1. Units          – Todas as criaturas descobertas.
+ 2. Items          – Todos os equipamentos e itens encontrados.
+ 3. Genes          – Genes descobertos no Gene Editor.
+ 4. Creature Traits     – 116 traits de criatura.
+ 5. Subspecies Traits   – 204 traits de subespécie.
+ 6. Culture        – Culturas encontradas no mundo.
+ 7. Language       – Idiomas encontrados.
+ 8. Clans          – Clãs encontrados.
+
+NOTA: Os fenótipos (52) também fazem parte da coleção de subespécies.
+10 fenótipos ainda são considerados "não descobertos" pela comunidade,
+possivelmente ligados a condições muito específicas.
+
+═══════════════════════════════════════════════════════════════════════════════
+34. CONQUISTAS (ACHIEVEMENTS)
+═══════════════════════════════════════════════════════════════════════════════
+
+Total: 96 conquistas (Desktop/PC) | 86 conquistas (Mobile).
+Muitas conquistas desbloqueiam traits e fenótipos específicos.
+
+Conquista especial:
+ – "God Mode": desbloqueada ao clicar 11 vezes no ícone hamburger
+   nas Configurações (ativa o Debug Menu).
+
+Conquistas que BLOQUEIAM ao usar Scar of Divinity:
+ – The King of Kings.
+ – The Accomplished.
+ – The Demon.
+
+═══════════════════════════════════════════════════════════════════════════════
+35. HISTÓRIA DO MUNDO (WORLD HISTORY)
+═══════════════════════════════════════════════════════════════════════════════
+
+O World History registra AUTOMATICAMENTE todos os eventos importantes:
+ – Fundação de reinos.
+ – Guerras e seus resultados.
+ – Tratados de paz.
+ – Desastres naturais.
+ – Mortes de reis.
+ – Surgimento e queda de culturas, clãs, religiões.
+
+FILTROS disponíveis:
+ – Por reis.
+ – Por unidades favoritas.
+ – Por cidades.
+ – Por reinos.
+ – Por guerras.
+ – Por clãs.
+ – Por desastres.
+
+[0.51.2]: Adicionado:
+ – Mostra se líder morreu na lista de líderes/reis passados.
+ – Mostra se ator/clã/religião/subespécie/cidade/idioma/cultura morreu
+   nas estatísticas (com nome + indicador ao lado).
+ – Quando nomes são mudados, brilham para lembrar que foram alterados.
+ – Nomes antigos são salvos e visíveis no histórico das janelas.
+
+WORLD HISTORY MARKER:
+ – O jogador pode adicionar NOTAS PESSOAIS à linha do tempo.
+
+═══════════════════════════════════════════════════════════════════════════════
+36. DEBUG MENU
+═══════════════════════════════════════════════════════════════════════════════
+
+ACESSO: Clicar 11 vezes no ícone hamburger (≡) nas Configurações.
+Desbloqueia a conquista "God Mode".
+
+OPÇÕES DO DEBUG MENU (parcial):
+ – FastSpawn              – Spawn rápido de criaturas.
+ – Graphy                 – Mostra FPS, RAM e métricas de performance.
+ – SonicSpeed             – Acelera o jogo além do ×5 normal.
+ – ShowAmountNearArmy     – Exibe número de unidades em exércitos.
+ – ShowFoodCityText       – Mostra quantidade de comida nas vilas.
+ – RenderFavoriteFoods    – Mostra comida favorita de cada unidade.
+ – Overlay Debug Text     – Sobreposição de info de debug no mapa.
+ – Display Map Overlay    – Visualiza City Zones e outras camadas.
+   (opção 7/15 mostra city zones).
+ – Ativar/desativar sistemas completos: Grey Goo, Conway, Greg, etc.
+ – Opções de IA e neurons.
+ – Opções de performance.
+ – Mecânicas internas.
+
+═══════════════════════════════════════════════════════════════════════════════
+37. HOTKEYS (ATALHOS DE TECLADO)
+═══════════════════════════════════════════════════════════════════════════════
+
+Atalhos disponíveis para ações comuns:
+ – Pausar/resumir jogo.
+ – Aumentar/diminuir velocidade.
+ – Copiar/colar.
+ – Desfazer última ação.
+ – Navegar entre abas de poderes.
+ – Zoom in/out.
+ – Abrir menus específicos.
+
+(Lista completa acessível em-game nas configurações.)
+
+═══════════════════════════════════════════════════════════════════════════════
+38. MODDING E STEAM WORKSHOP
+═══════════════════════════════════════════════════════════════════════════════
+
+WorldBox suporta MODS via Steam Workshop (PC/Mac/Linux).
+ – Permite adicionar: novas criaturas, biomas, poderes, mecânicas.
+ – Jogadores podem compartilhar mapas via Workshop ou diretamente.
+ – [0.51.2 – iOS]: Pasta WorldBox acessível pelo app Files local e iTunes,
+   permitindo importar/exportar saves em iOS.
+
+O uso do Loot Rain após mods poderia crashar o jogo (bug corrigido em 0.51).
+
+═══════════════════════════════════════════════════════════════════════════════
+39. CONTEÚDO OCULTO (HIDDEN AND UNUSED CONTENT)
+═══════════════════════════════════════════════════════════════════════════════
+
+ – Criaturas removidas de versões antigas (Removed Creatures).
+ – Criaturas planejadas mas não implementadas (Unused Creatures).
+ – Trait "iconVermin" oculto nos arquivos (descrição: "Tiny creatures.
+   A snack for bigger animals").
+ – Fenótipos não descobertos pela comunidade (~10 ainda não documentados).
+ – Alguns traits/poderes só acessíveis via Debug Menu ou Modding.
+ – Menu Art: artes de fundo dos menus carregadas de .png, organizadas por
+   categoria. O jogo alterna entre elas aleatoriamente, dando prioridade
+   às mais recentes.
+
+═══════════════════════════════════════════════════════════════════════════════
+40. SISTEMA DE NOMES – LÓGICA COMPLETA
+═══════════════════════════════════════════════════════════════════════════════
+
+O sistema de geração de nomes usa TEMPLATES HÍBRIDOS com:
+ 1. Building Glyphs   – Palavras fixas escolhidas aleatoriamente de pools.
+ 2. Syllable Glyphs   – Sílabas extraídas e recombinadas (capacidade infinita).
+ 3. Special Glyphs    – Transformações (capitalizar, separador, gênero, etc.).
+
+CATEGORIAS DE NOMES:
+ Unit, Family, Clan, Village, Kingdom, Culture, Language, Religion,
+ Alliance, War, Item, World, Player.
+
+RAÇAS com pools próprios:
+ Humano, Elfo, Anão, Orc, Animal, Criatura Especial, Genérico.
+
+TIPOS DE SPECIAL GLYPH:
+ REPETIR, DUPLICAR, ESPELHAR, ALEATÓRIO, PONTUAÇÃO, SEPARADOR,
+ SUBSTITUIR, REMOVER, CAPITALIZAR, GÊNERO.
+
+CAPACIDADE: >1 bilhão de nomes únicos (escalável infinitamente via sílabas).
+
+COLETIVOS DE ANIMAIS:
+ Lobo/Cão → pack | Pássaro/Galinha → flock | Peixe → shoal
+ Abelha → swarm | Formiga → colony | Urso → den | Dragão → bale
+ Humano/Elfo/Anão/Orc → army
+
+═══════════════════════════════════════════════════════════════════════════════
+41. SISTEMA DE FENÓTIPOS – RESUMO TÉCNICO
+═══════════════════════════════════════════════════════════════════════════════
+
+ – Implementado na versão 0.50. Substituiu sistema de "Skin Colors".
+ – 52 variações de cores totais.
+ – Lógica: SUBESPÉCIE + BIOMA DE NASCIMENTO = fenótipo determinado.
+ – São traits especiais de subespécie (não aparecem aleatoriamente).
+ – Desbloqueados por: hover sobre trait novo (círculo ?) ou achievements.
+ – Mechanic de desbloqueio: abrir subespécie + hover sobre trait.
+ – Traits Lendários: desbloqueados por conquistas associadas.
+ – 10 fenótipos ainda são considerados não descobertos pela comunidade.
+ – Escolha aleatória dentro das opções disponíveis para aquela combinação.
+
+═══════════════════════════════════════════════════════════════════════════════
+42. RESUMO DOS 8 PILARES DA SIMULAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+A simulação de WorldBox assenta em 8 pilares lógicos interdependentes:
+
+ 1. FÍSICO       – Terreno, biomas, recursos e propagação do mapa.
+
+ 2. BIOLÓGICO    – Unidades, stats, genética, fenótipos e reprodução.
+
+ 3. COMPORTAMENTAL – Tasks (117), necessidades (fome, saúde, felicidade),
+                    Neurons (IA) e estados/doenças.
+
+ 4. COMBATE      – Melee/ranged/spell, magias, projéteis, metamorfose
+                   e morte.
+
+ 5. SOCIAL       – Vilas, reinos, economia, política, alianças, guerras,
+                   clãs, famílias, culturas, religiões, idiomas, livros,
+                   plots.
+
+ 6. DIVINO       – ~374 poderes do jogador, World Laws e intervenções.
+
+ 7. TEMPORAL     – 10 idades (Ages), History do mundo, progressão
+                   histórica.
+
+ 8. META         – Interface, Knowledge (774), Achievements, Debug Menu,
+                   Hotkeys, Modding, conteúdo oculto.
+
+INTERDEPENDÊNCIA (exemplo):
+ Um BIOMA influencia a cor (fenótipo) de uma criatura →
+ que herda TRAITS genéticos →
+ que afetam seu comportamento (Neurons/Tasks) →
+ numa CIDADE que determina a economia do REINO →
+ que pode levar a uma GUERRA →
+ que o jogador observa via HISTORY e altera com um PODER DIVINO.
+
+═══════════════════════════════════════════════════════════════════════════════
+FIM DO DOCUMENTO
+Versão do documento: 1.0 | Baseado em WorldBox 0.51.2 (ArmyBox) | Maio 2026
+Fontes: Wiki Oficial (fandom), Changelog Oficial (superworldbox.com),
+        arquivo worldbox_database.txt (fornecido pelo usuário),
+        pesquisa web atualizada.
+═══════════════════════════════════════════════════════════════════════════════
